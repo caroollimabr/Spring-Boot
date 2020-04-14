@@ -60,6 +60,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	//método para configurações de recursos estáticos (CSS, JS, imagens, etc)
 	@Override
 	public void configure(WebSecurity web) throws Exception {
+		//lista de todas as URLs que a gnt quer que a segurança ignore 
+		web.ignoring()
+        .antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**");
 	}
 	
 	public static void main (String[] args) {
